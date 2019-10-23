@@ -30,6 +30,9 @@ RUN apt-get update && apt-get install -y \
     ttf-freefont \
     --no-install-recommends
 
+# Remove readme file
+RUN rm README.md
+
 # Add Chrome as a user
 RUN groupadd -r chrome && useradd -r -g chrome -G audio,video chrome \
     && mkdir -p /home/chrome && chown -R chrome:chrome /home/chrome \
